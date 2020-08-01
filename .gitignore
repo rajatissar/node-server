@@ -1,0 +1,15 @@
+# use to store webpack bundle
+/build
+# use to store private key and certificate
+/certificates
+# external dependency
+/node_modules
+# use to serve static files
+/public
+# use to store temp files
+/temp
+# use to store logs files
+/winston-logs
+
+.env
+package-lock.json

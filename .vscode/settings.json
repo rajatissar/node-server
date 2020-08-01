@@ -1,0 +1,11 @@
+{
+  "prettier.arrowParens": "always",
+  "prettier.singleQuote": true,
+  "cSpell.words": [
+    "eslintignore",
+    "middlewares",
+    "originalname",
+    "resave",
+    "sendgrid"
+  ]
+}

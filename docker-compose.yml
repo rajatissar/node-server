@@ -1,0 +1,31 @@
+version: '3'
+networks:
+  webnet:
+    driver: bridge
+services:
+  app:
+    container_name: app
+    image: node_server
+    restart: always
+    build: .
+    ports:
+      - '1415:1415'
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - webnet
+    environment:
+      DB_HOST: mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    networks:
+      - webnet
+    ports:
+      - '27017:27017'
+networks:
+  webnet:
