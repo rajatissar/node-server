@@ -8,7 +8,7 @@ import { ERROR_MESSAGES } from './messages';
 import { print, isProd } from './functions';
 import { RouteNotExistError } from '../shared/error';
 
-export default (app) => {
+const errorHandlerConfig = (app) => {
   // route does not exist
   app.use((req, res) => {
     const { ROUTE_NOT_EXIST } = ERROR_MESSAGES;
@@ -20,7 +20,7 @@ export default (app) => {
   // error handler
   // eslint-disable-next-line
   app.use((err, req, res, next) => {
-    print('error handler', JSON.stringify(err));
+    print('error handler', err);
     if (isProd()) {
       set(err, 'name', 'Internal Server Error');
       unset(err, 'message');
@@ -28,3 +28,5 @@ export default (app) => {
     errorHandler(res, err, err.statusCode);
   });
 };
+
+export default errorHandlerConfig;

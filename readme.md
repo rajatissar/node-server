@@ -4,7 +4,31 @@ A Simple server made using NodeJS, MongoDB
 
 ## Prerequisites
 
-Please make sure you have NodeJs, MongoDB, Docker & Docker Compose (if needed) installed on your system
+* Node 10 or higher
+* npm 6.11 or higher
+* Ensure that MongoDB is installed on your system. (Start Mongo Service by using `sudo service mongod start`)
+* Docker & Docker Compose (if needed)
+* If you want to update default environment variables then create .env file in root directory and update env variables accordingly as per below format:-
+
+    ```TEXT
+    ENV=development
+    NODE_ENV=development
+    SERVER_PORT=1415
+    DB_HOST=localhost
+    DB_PORT=27017
+    DB_NAME=ppl
+    REDIS_HOST=localhost
+    REDIS_PORT=6379
+    REDIS_TTL=20
+    REDIS_LOG_ERRORS=true
+    EXPRESS_SESSION_NAME=XXXX
+    EXPRESS_SESSION_SECRET_KEY=XXXX
+    EXPRESS_SESSION_COOKIE_SECURE=true
+    EXPRESS_SESSION_COOKIE_MAX_AGE=2592000000
+    JWT_SECRET_KEY=XXXX
+    JWT_EXPIRES_IN=24h
+    SENDGRID_API_KEY=XXXX
+    ```
 
 ## Installation
 
